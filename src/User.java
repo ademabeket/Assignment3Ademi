@@ -1,6 +1,5 @@
-import java.util.Objects;
-
 public class User {
+    private int id;
     private String name;
     private int age;
     private double weight;
@@ -11,30 +10,21 @@ public class User {
         this.weight = weight;
     }
 
+    public User(int id, String name, int age, double weight) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+    }
+
+    public int getId() { return id; }
     public String getName() { return name; }
     public int getAge() { return age; }
     public double getWeight() { return weight; }
 
-    public void setName(String name) { this.name = name; }
-    public void setAge(int age) { this.age = age; }
-    public void setWeight(double weight) { this.weight = weight; }
-
     @Override
     public String toString() {
-        return "User{name='" + name + "', age=" + age + ", weight=" + weight + "}";
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return name.equals(user.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
+        return id + " | " + name + " | " + age + " | " + weight;
     }
 }
 
